@@ -16,7 +16,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 	<flow name="activemqFlow" doc:id="0aceb6bb-2516-4d8e-afef-eab7e726ab27" >
 		<http:listener doc:name="Listener" doc:id="d89af96f-b74f-41f7-9ccc-3168f09cd73c" config-ref="HTTP_Listener_config" path="/jms"/>
 		<jms:publish-consume doc:name="Publish consume" doc:id="81e38091-c5ea-4af5-8090-8bfa4d796457" config-ref="JMS_Config" destination="gajana"/>
-		<logger level="INFO" doc:name="Logger" doc:id="7e667341-6130-4c0c-a3ff-2385e52e604b" message="#[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="7e667341-6130-4c0c-a3ff-2385e52e604b" message="#[payload ++ 'publish']"/>
 	</flow>
 	<flow name="activemqFlow1" doc:id="2b26d6f0-4d17-41ee-94d5-1b5e6fd296d2" >
 		<jms:listener doc:name="Listener" doc:id="1add1227-3381-4f59-83b8-b89e5621203e" config-ref="JMS_Config" destination="gajana">
